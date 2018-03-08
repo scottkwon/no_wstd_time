@@ -1,0 +1,19 @@
+<div id="TaskComponent">
+  <h4>To Do List</h4>
+    <div *ngFor="let task of tasks; let idx = index">
+      <form class="form-group">
+        <input type="checkbox" class="filled-in" id="checkbox2" (click)="deleteTask(idx)">
+        <label for="checkbox2"><inline-editor type="text" name="tasks" [(ngModel)]="tasks[idx]" (onSave)="updateEditable($event)"></inline-editor></label>
+      </form>
+<!-- <form>
+        <span> <input type="radio" (click)="deleteTask(idx)">
+        <inline-editor type="text" name="tasks" [(ngModel)]="tasks[idx]" (onSave)="updateEditable($event)"></inline-editor></span>
+      </form> -->
+    </div>
+
+    <div>
+    <form id="input" (submit)="saveEditable($event)">
+        <input type="text" name="task" [(ngModel)]="task"  placeholder="New task" >
+    </form>
+    </div>
+</div>

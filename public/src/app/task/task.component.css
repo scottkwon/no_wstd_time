@@ -1,0 +1,32 @@
+/*
+*{
+    vertical-align: top;
+}
+
+inline-editor{
+    width:100%;
+    border: 0px;
+    display: inline;
+    vertical-align: top;
+}
+
+input[type=text]{
+    border: 0px;
+    display: inline;
+    vertical-align: top;
+}*/
+
+label, input {
+  font-size: 18px;
+  font-weight: lighter;
+}
+
+#TaskComponent{
+    display: inline-block;
+    vertical-align: top;
+    padding: 15px;
+}
+
+h4 {
+  color: #C58080;
+}

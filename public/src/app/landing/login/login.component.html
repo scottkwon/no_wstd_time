@@ -1,0 +1,37 @@
+<div id="login" class="md-form">
+	<div class="text-center">
+		<h3>Login</h3>
+		<hr class="mt-2 mb-2">
+	</div>
+
+	<p *ngFor="let err of errors">{{ err }}</p>
+
+	<form (submit)="login()" #logForm="ngForm">
+        <i class="fa fa-envelope prefix"></i>
+        <input type="text" type="text"
+				class="form-control"
+				name="email"
+				placeholder="Enter Email"
+				required
+				[(ngModel)]="user_login.email"
+				#login_email="ngModel">
+				<p *ngIf="!login_email.valid && (login_email.dirty || login_email.touched)">Email is required</p>
+
+        <i class="fa fa-lock fa-2x prefix"></i>
+        <input type="password"
+				class="form-control"
+				name="password"
+				placeholder="Enter Password"
+				required
+				[(ngModel)]="user_login.password"
+				#login_password="ngModel">
+				<p *ngIf="!login_password.valid && (login_password.dirty || login_password.touched)">Password is required</p>
+
+			<div class="text-center">
+        <button class="btn btn-blue-grey" type="submit" [disabled]="!logForm.form.valid">Login</button>
+			</div>
+</form>
+<div class="modal-footer">
+	<p>Not yet registered? <a [routerLink]="['/main', 'register']">Register here</a></p>
+</div>
+</div>

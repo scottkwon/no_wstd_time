@@ -1,0 +1,51 @@
+<div id="create">
+<h4>New Event</h4>
+	<form (submit)="create()" #createForm="ngForm">
+		<label for="category">Category: <select
+		name="category"
+		required
+		[(ngModel)]="newThing.category"
+		#category="ngModel">
+      <option disabled>Select...</option>
+      <option value="event">Event</option>
+      <option value="meeting">Meeting</option>
+      <option value="appointment">Appointment</option>
+      <option value="travel">Travel</option>
+    </select>
+		<p *ngIf="!category.valid && (category.dirty || category.touched)">Select a category.</p>
+		</label>
+		<label for="title">Title: <input
+		type="text"
+		name="title"
+		required
+		[(ngModel)]="newThing.title"
+		#title="ngModel">
+		<p *ngIf="!title.valid && (title.dirty || title.touched)">Please enter a title.</p>
+		</label>
+    <label for="start_date">Start Date: <input
+    type="date"
+    name="start_date"
+    required
+    [(ngModel)]="newThing.start_date"
+    #start_date="ngModel">
+    <p *ngIf="!start_date.valid && (start_date.dirty || start_date.touched)">Please enter a start date.</p>
+    </label>
+    <label for="end_date">End Date: <input
+    type="date"
+    name="end_date"
+    required
+    [(ngModel)]="newThing.end_date"
+    #end_date="ngModel">
+    <p *ngIf="!end_date.valid && (end_date.dirty || end_date.touched)">Please enter an end date.</p>
+		</label>
+    <label for="description">Description: <textarea
+		name="description"
+    rows="10"
+    cols="50"
+		[(ngModel)]="newThing.description"
+		#description="ngModel">
+    </textarea>
+		</label>
+    <input type="submit" [disabled]="!createForm.form.valid" value="Create"> <button [routerLink]="['/dashboard']">Cancel</button>
+	</form>
+</div>
