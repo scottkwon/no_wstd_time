@@ -10,4 +10,4 @@
 
 *No WSTED Time* was a team effort. The decision to use **Angular** as a front-end was inspired by our team wanting to divide back-end and front-end responsibilities.
 
-![alt text](https://imgur.com/a/Wrp3f)
+![screenshot](nowstdtime.png)
